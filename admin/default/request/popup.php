@@ -11,3 +11,13 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/deletePost.php");
     }
   }
+  if($type == 'editSVGPopUp'){
+    if(isset($_POST['svg'])){
+      $cID = mysqli_real_escape_string($db, $_POST['svg']);
+      $alertType = $type;
+      $getIconData = $iN->iN_GetSVGCodeFromID($cID);
+      if($getIconData){  
+        include("../sources/popup/editSVG.php");
+      }
+    }
+  }
