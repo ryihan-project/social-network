@@ -34,3 +34,10 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/deletePlan.php");
     }
   }
+  if($type == 'ddelAds'){
+    if(isset($_POST['id'])){
+      $planID = mysqli_real_escape_string($db, $_POST['id']);
+      $alertType = $type;
+      include("../sources/popup/deleteAds.php");
+    }
+  }
