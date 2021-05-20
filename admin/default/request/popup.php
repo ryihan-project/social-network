@@ -40,6 +40,12 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/editLanguage.php");
     }
   }
+  if($type == 'delLang'){  
+    if(isset($_POST['id'])){
+      $langID = mysqli_real_escape_string($db, $_POST['id']); 
+      include("../sources/popup/deleteLanguage.php");
+    }
+  }
   if($type == 'deletePayout'){
     if(isset($_POST['id'])){
       $delUserID = mysqli_real_escape_string($db, $_POST['id']);
