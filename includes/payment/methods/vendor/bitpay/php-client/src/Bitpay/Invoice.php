@@ -36,6 +36,27 @@ class Invoice implements InvoiceInterface
      * @var string
      */
     protected $notificationEmail;
+
+    /**
+     * @var string
+     */
+    protected $notificationUrl;
+
+    /**
+     * @var string
+     */
+    protected $redirectUrl;
+
+    /**
+     * @var string
+     */
+    protected $posData;
+
+    /**
+     * @var string
+     */
+    protected $status;
+
     /**
      * @var boolean
      */
