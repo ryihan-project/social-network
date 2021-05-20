@@ -46,6 +46,16 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/deleteLanguage.php");
     }
   }
+  if($type == 'newLangauge'){  
+    include("../sources/popup/addNewLanguage.php");  
+  }
+  if($type == 'deleteUser'){
+    if(isset($_POST['id'])){
+      $delUserID = mysqli_real_escape_string($db, $_POST['id']);
+      $alertType = $type;
+      include("../sources/popup/deleteUser.php");
+    }
+  }
   if($type == 'deletePayout'){
     if(isset($_POST['id'])){
       $delUserID = mysqli_real_escape_string($db, $_POST['id']);
