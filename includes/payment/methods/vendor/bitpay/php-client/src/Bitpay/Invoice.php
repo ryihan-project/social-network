@@ -57,6 +57,19 @@ class Invoice implements InvoiceInterface
 
         return $this;
     }
+    /**
+     * @param string $url
+     *
+     * @return InvoiceInterface
+     */
+    public function setUrl($url)
+    {
+        if (!empty($url) && ctype_print($url)) {
+            $this->url = trim($url);
+        }
+
+        return $this;
+    }
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
