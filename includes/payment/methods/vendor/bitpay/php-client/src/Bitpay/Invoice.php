@@ -12,6 +12,12 @@ namespace Bitpay;
  */
 class Invoice implements InvoiceInterface
 {
+    /**
+     * @var CurrencyInterface
+     */
+    protected $currency;
+
+    /**
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
