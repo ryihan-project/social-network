@@ -69,6 +69,23 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/deletePage.php");
     }
   }
+  if($type == 'ddelQA'){
+    if(isset($_POST['id'])){
+      $postID = mysqli_real_escape_string($db, $_POST['id']);
+      $alertType = $type;
+      include("../sources/popup/deleteQA.php");
+    }
+  }
+  if($type == 'editStickerUrl'){
+    if(isset($_POST['sid'])){
+      $cID = mysqli_real_escape_string($db, $_POST['sid']);
+      $alertType = $type;
+      $getSData = $iN->iN_GetStickerDetailsFromID($cID);
+      if($getSData){  
+        include("../sources/popup/editStickerUrl.php");
+      }
+    }
+  }
   if($type == 'deletePayout'){
     if(isset($_POST['id'])){
       $delUserID = mysqli_real_escape_string($db, $_POST['id']);
