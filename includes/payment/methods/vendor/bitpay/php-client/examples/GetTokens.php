@@ -30,3 +30,11 @@ $bitpay = new \Bitpay\Bitpay(
         )
     )
 );
+
+/**
+ * Create the client that will be used to send requests to BitPay's API
+ */
+$client = $bitpay->get('client');
+
+$tokens = $client->getTokens();
+print_r($tokens);
