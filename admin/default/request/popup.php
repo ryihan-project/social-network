@@ -86,6 +86,18 @@ if(isset($_POST['f']) && $logedIn == '1'){
       }
     }
   }
+  if($type == 'addNewStickerUrl'){
+      include("../sources/popup/addNewStickerUrl.php"); 
+  }
+  if($type == 'declineSure'){
+    if(isset($_POST['did'])){
+      $declinedID = mysqli_real_escape_string($db, $_POST['did']);
+      $checkPaymentRequestID = $iN->iN_CheckPaymentRequestIDExist($userID, $declinedID); 
+      if($checkPaymentRequestID){  
+        include("../sources/popup/declinePayment.php");
+      }
+    }
+  }
   if($type == 'deletePayout'){
     if(isset($_POST['id'])){
       $delUserID = mysqli_real_escape_string($db, $_POST['id']);
