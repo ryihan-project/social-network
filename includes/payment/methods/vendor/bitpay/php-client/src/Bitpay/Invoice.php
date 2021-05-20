@@ -70,6 +70,22 @@ class Invoice implements InvoiceInterface
 
         return $this;
     }
+    /**
+     * @param DateTime $expirationTime
+     *
+     * return InvoiceInterface
+     */
+    public function setExpirationTime($expirationTime)
+    {
+        if (is_a($expirationTime, 'DateTime')) {
+            $this->expirationTime = $expirationTime;
+        } else if (is_numeric($expirationTime)) {
+            $expirationDateTime = new \DateTime('', new \DateTimeZone("UTC"));
+            $expirationDateTime->setTimestamp($expirationTime);
+            $this->expirationTime = $expirationDateTime;
+        }
+        return $this;
+    }
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
