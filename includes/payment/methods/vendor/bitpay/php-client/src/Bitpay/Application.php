@@ -5,3 +5,10 @@
  */
 
 namespace Bitpay;
+
+/**
+ *
+ * @package Bitpay
+ */
+class Application implements ApplicationInterface
+{
