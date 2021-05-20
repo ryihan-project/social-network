@@ -49,6 +49,14 @@ class Invoice implements InvoiceInterface
         return $this->item;
     }
 
+    public function setNotificationUrl($notificationUrl)
+    {
+        if (!empty($notificationUrl) && ctype_print($notificationUrl)) {
+            $this->notificationUrl = trim($notificationUrl);
+        }
+
+        return $this;
+    }
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
