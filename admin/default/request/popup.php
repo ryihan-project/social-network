@@ -56,6 +56,19 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/deleteUser.php");
     }
   }
+  if($type == 'deleteUserVerification'){
+    if(isset($_POST['id'])){
+      $verfID = mysqli_real_escape_string($db, $_POST['id']); 
+      include("../sources/popup/deleteVerificationRequest.php");
+    }
+  }
+  if($type == 'ddelPage'){
+    if(isset($_POST['id'])){
+      $postID = mysqli_real_escape_string($db, $_POST['id']);
+      $alertType = $type;
+      include("../sources/popup/deletePage.php");
+    }
+  }
   if($type == 'deletePayout'){
     if(isset($_POST['id'])){
       $delUserID = mysqli_real_escape_string($db, $_POST['id']);
