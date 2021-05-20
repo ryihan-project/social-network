@@ -34,6 +34,12 @@ class Invoice implements InvoiceInterface
      * @var boolean
      */
     protected $fullNotifications = true;
+
+    /**
+     * @var \DateTime
+     */
+    protected $expirationTime;
+
     /**
      * @inheritdoc
      */
