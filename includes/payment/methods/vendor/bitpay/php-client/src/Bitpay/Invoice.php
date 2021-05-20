@@ -86,6 +86,17 @@ class Invoice implements InvoiceInterface
         }
         return $this;
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function getBuyerAddress2()
+    {
+        $address = $this->getBuyer()->getAddress();
+
+        return $address[1];
+    }
+
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
