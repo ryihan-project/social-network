@@ -30,6 +30,12 @@ class Invoice implements InvoiceInterface
     /**
      * @var string
      */
+    protected $transactionSpeed = self::TRANSACTION_SPEED_MEDIUM;
+
+    /**
+     * @var string
+     */
+    protected $notificationEmail;
     /**
      * @var boolean
      */
