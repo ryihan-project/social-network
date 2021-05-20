@@ -48,3 +48,18 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/deleteSticker.php");
     }
   }
+  if($type == 'newQA'){
+    include("../sources/popup/newQA.php");  
+  }
+  if($type == 'editQuestionAnswer'){
+    if(isset($_POST['sid'])){
+      $cID = mysqli_real_escape_string($db, $_POST['sid']);
+      $alertType = $type;
+      $getSData = $iN->iN_GetQADetailsFromID($cID);
+      if($getSData){  
+        include("../sources/popup/editQA.php");
+      }
+    }
+  }
+}
+?>
