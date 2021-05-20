@@ -97,6 +97,19 @@ class Invoice implements InvoiceInterface
         return $address[1];
     }
 
+    /**
+     * @deprecated Deprecated with introduction of BCH
+     * @param
+     * @return Invoice
+     */
+    public function setBtcPaid($btcPaid)
+    {
+        if (isset($btcPaid)) {
+            $this->btcPaid = $btcPaid;
+        }
+
+        return $this;
+    }
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
