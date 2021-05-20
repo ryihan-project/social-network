@@ -41,3 +41,10 @@ if(isset($_POST['f']) && $logedIn == '1'){
       include("../sources/popup/deleteAds.php");
     }
   }
+  if($type == 'deleteSticker'){
+    if(isset($_POST['id'])){
+      $delStickerID = mysqli_real_escape_string($db, $_POST['id']);
+      $alertType = $type;
+      include("../sources/popup/deleteSticker.php");
+    }
+  }
