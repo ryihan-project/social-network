@@ -18,6 +18,13 @@ class Invoice implements InvoiceInterface
     protected $currency;
 
     /**
+     * @var string
+     */
+    protected $orderId;
+
+    /**
+     * @var ItemInterface
+     */
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
