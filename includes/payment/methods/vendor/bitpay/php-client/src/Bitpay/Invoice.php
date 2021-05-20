@@ -30,6 +30,10 @@ class Invoice implements InvoiceInterface
     /**
      * @var string
      */
+    /**
+     * @var boolean
+     */
+    protected $fullNotifications = true;
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
