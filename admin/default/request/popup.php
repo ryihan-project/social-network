@@ -21,3 +21,16 @@ if(isset($_POST['f']) && $logedIn == '1'){
       }
     }
   }
+  if($type == 'newSVGCode'){  
+      include("../sources/popup/newSVG.php");  
+  }
+  if($type == 'newPackage'){  
+    include("../sources/popup/newPackage.php");  
+  }
+  if($type == 'ddelPlan'){
+    if(isset($_POST['id'])){
+      $planID = mysqli_real_escape_string($db, $_POST['id']);
+      $alertType = $type;
+      include("../sources/popup/deletePlan.php");
+    }
+  }
