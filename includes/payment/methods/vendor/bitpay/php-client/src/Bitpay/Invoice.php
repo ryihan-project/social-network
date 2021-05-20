@@ -110,6 +110,19 @@ class Invoice implements InvoiceInterface
 
         return $this;
     }
+     /**
+     * @param void
+     * @return Invoice
+     */
+    public function getPaymentTotals()
+    {
+        return $this->paymentTotals;
+    }
+
+    /**
+     * @param
+     * @return
+     */
     public function setPaymentTotals($paymentTotals)
     {
         if (!empty($paymentTotals)) {
